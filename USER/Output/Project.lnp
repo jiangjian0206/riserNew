@@ -1,6 +1,5 @@
 --cpu Cortex-M3
 ".\user\output\stm32f10x_it.o"
-".\user\output\w5500.o"
 ".\user\output\led.o"
 ".\user\output\main.o"
 ".\user\output\usart.o"
