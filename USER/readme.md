@@ -1,0 +1,1 @@
+1.change :add  CurKey->KeyShortDown_F = 0; to the task  end.
