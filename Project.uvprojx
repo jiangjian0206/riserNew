@@ -47,7 +47,7 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\USER\Output\</OutputDirectory>
+          <OutputDirectory>.\</OutputDirectory>
           <OutputName>Project</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
@@ -422,11 +422,6 @@
               <FilePath>.\USER\stm32f10x_it.c</FilePath>
             </File>
             <File>
-              <FileName>W5500.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\USER\W5500.c</FilePath>
-            </File>
-            <File>
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\USER\LED.c</FilePath>
@@ -452,11 +447,6 @@
               <FilePath>.\USER\ADC.c</FilePath>
             </File>
             <File>
-              <FileName>newRiser2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\newRiser2.c</FilePath>
-            </File>
-            <File>
               <FileName>dataJ6.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\dataJ6.c</FilePath>
@@ -465,6 +455,11 @@
               <FileName>dataJ7.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\dataJ7.c</FilePath>
+            </File>
+            <File>
+              <FileName>newRiser2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\newRiser2.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -525,11 +520,6 @@
               <FileName>stm32f10x_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\LIB\src\stm32f10x_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LIB\src\stm32f10x_i2c.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_iwdg.c</FileName>

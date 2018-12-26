@@ -361,7 +361,7 @@ void delay_ms(unsigned int nms)
 		Vo[1]=Get_Adc_Average(0,4);
 		//CSX1=1;
 		//ADVIN=(float)voltage_TEST0()*3300/4096;//24894  *3306/4096;//*
-		if(Vo[1] >=0)
+		if(Vo[1] >=1)
 		{
 			sprintf(Table_2, "\r\nY[%3d]X[%3d]:%5d\r\n", TestYPin,TestXPin,Vo[1]);
 			printf(Table_2);//Up
@@ -416,84 +416,7 @@ int SetPin(int TestYPin,int TestXPin)
  int SetPinReverse111(int TestYPin,int TestXPin)
 {
     //是否导通   number 1
-    int YEightBit,YCsBit,XEightBit,XCsBit;
-	int realTestXPin =TestXPin;  //这是实际切换的ic点位，比如产品1点，对应ic脚50.  
-	int realTestYPin =TestXPin;
-	int TestPinYAfter,TestXPinAfter;
-
-	 if ( TestXPin >0 && TestXPin <= 50 )
-	 {
-	     if(TestXPin >25)
-	     {
-			realTestXPin =TestXPin -(TestXPin -25)*2 +1;
-		 }
-		 if ( TestXPin <= 25 )
-		 {
-		    realTestXPin = TestXPin +(25 -TestXPin)*2+1;
-		 }
-	 }
-	 if ( TestXPin >50 && TestXPin <= 100 )
-	 {
-	     if(TestXPin >75)
-	     {
-			realTestXPin =TestXPin -(TestXPin -75)*2 +1;
-		 }
-		 if ( TestXPin <= 75 )
-		 {
-		    realTestXPin = TestXPin +(75 -TestXPin)*2+1;
-		 }
-	 }
-	 if ( TestYPin >0 && TestYPin <= 50 )
-	 {
-	     if(TestYPin >25)
-	     {
-			realTestYPin =TestYPin -(TestYPin -25)*2 +1;
-		 }
-		 if ( TestYPin <= 25 )
-		 {
-		    realTestYPin = TestYPin +(25 -TestYPin)*2+1;
-		 }
-	 }
-	  if ( TestYPin >50 && TestYPin <= 100 )
-	 {
-	     if(TestYPin >75)
-	     {
-			realTestYPin =TestYPin -(TestYPin -75)*2 +1;
-		 }
-		 if ( TestYPin <= 75 )
-		 {
-		    realTestYPin = TestYPin +(75 -TestYPin)*2+1;
-		 }
-	 }
-	 
-	 YEightBit =(realTestYPin-1)%8;
-	 YCsBit =(realTestYPin-1)/8;
-	 XEightBit =(realTestXPin-1)%8;
-	 XCsBit =(realTestXPin-1)/8;
-	
-	  selectYCs(YCsBit);
-		selectChannal(YEightBit,'Y');
-		selectXCs(XCsBit);
-		selectChannal(XEightBit,'X');
-		delay_ms(3);
-		Vo[1]=Get_Adc_Average(0,4);
-		//CSX1=1;
-		//ADVIN=(float)voltage_TEST0()*3300/4096;//24894  *3306/4096;//*
-		if(Vo[1] >=f_putLong && debugPrintfEachTime ==1)
-		{
-			sprintf(Table_2, "\r\nY[%3d]X[%3d]:%5d;---realIC place Y[%3d]X[%3d]", TestYPin,TestXPin,Vo[1],realTestYPin,realTestXPin);
-			printf(Table_2);//Up
-		}
-		//else printf(".");//Up
-		
-	    //是否open   with next line.
-		selectYCs(800); 
-		return Vo[1];
-//		  delay_ms(2);
-//		  voltage_TEST0();voltage_TEST0();
-//		  Vo[2]=voltage_TEST0();
-//		  sprintf(Table_2, "Y1X2:%d\r\n", Vo[2]);
-//		  printf(Table_2);//Up
+   return 0;
 
 }
 void testGNDPoint(int *Ypoint,int *Xpoint)
@@ -567,25 +490,8 @@ void scanSignalLine()
 //依据已经知道的信号点Y,扫描出X的signal点。传入Y的信号点。
 void scanSignalLineByPoint(int *Ypoint)
 	{
-   int j=0;
-   int numTestFrom  =23, numTestTo =100;
-   int numTestXFrom =23,numTestXTo =100;
-   int result =0;
-//   int *Ypoint =J7Y_data;
-//   int *Xpoint =J1X_data;
-	
-   for(;*Ypoint != 500; Ypoint ++)
-   	{  
-   	  
-	   	for ( j =  numTestXFrom; j <=  numTestXTo; j++ )
-	   	{
-			if(judeWhinY(j,J1A_gnd)== 1) continue;
-			result =SetPinReverse(*Ypoint,j);
-	   	    
-			
-	   	}
-	
-   }
+  
+
     printf("here is out put all of result  \r\n");
    
 }
@@ -670,14 +576,14 @@ void scanSignalLineByPoint(int *Ypoint)
    int i=0;
    //int numTestFrom  =1, numTestTo =50;
    //int numTestXFrom =1,numTestXTo =50;
-   int result =0;
+  
 //   int *Ypoint =J7Y_data;
 //   int *Xpoint =J1X_data;
 	
    for(i= fromPoint ; i<= toPoint ; i++)
    	{  
    	   
-	 result =SetPinReverse(gnd,i);
+	 SetPinReverse(gnd,i);
 	 //if(result<1000 ) SetPinReverse(i,gnd);   
    }
     printf("scan the gnd over  \r\n");

@@ -265,7 +265,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4])
 			}
 			else
 			{
-				sprintf(Table_2, "fail:%s[%3d]%s[%3d]:open\r\n", str1,testData[i][0],str2,testGnd[store_gnd_right][1]);
+				sprintf(Table_2, "fail:%s[%3d]%s[%3d]:short\r\n", str1,testData[i][0],str2,testGnd[store_gnd_right][1]);
 				printf(Table_2);
 			}
 			
@@ -278,7 +278,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4])
 			}
 			else
 			{
-				sprintf(Table_2, "fail:%s[%3d]%s[%3d]:open\r\n", str1,testData[i][0],str2,testData[i+1][1]);
+				sprintf(Table_2, "fail:%s[%3d]%s[%3d]:short\r\n", str1,testData[i][0],str2,testData[i+1][1]);
 				printf(Table_2);
 			}
 		}
