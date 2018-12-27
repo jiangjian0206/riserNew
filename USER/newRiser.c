@@ -285,12 +285,12 @@ void delay_ms(unsigned int nms)
 	 
      switch ( channal )
      {
-         case 0 :             GPIO_ResetBits(GPIOB,GPIO_Pin_0);           break;
-         case 1 :             GPIO_ResetBits(GPIOB,GPIO_Pin_1);            break;
-         case 2 :             GPIO_ResetBits(GPIOB,GPIO_Pin_2);             break;
-         case 3 :             GPIO_ResetBits(GPIOB,GPIO_Pin_3);             break;
-         case 4 :             GPIO_ResetBits(GPIOB,GPIO_Pin_4);            break;
-         case 5 :             GPIO_ResetBits(GPIOC,GPIO_Pin_10);             break;
+         case 0 :              CSX1 =0;           break;
+         case 1 :              CSX2 =0;            break;
+         case 2 :              CSX3 =0;            break;
+         case 3 :              CSX4 =0;           break;
+         case 4 :              CSX5 =0;            break;
+         case 5 :              CSX6 =0;            break;
          case 6 :             CSX7 =0;             break;
          case 7 :             CSX8 =0;             break;
          case 8 :             CSX9 =0;             break;
@@ -314,7 +314,7 @@ void delay_ms(unsigned int nms)
 	     case 25 :	         CSX26 =0;	         break;
 	     case 26 :	         CSX27 =0;	         break;
 	     case 27 :	         CSX28 =0;	         break;	 
-		 case 28:	         CSX29 =0;	         break;
+		   case 28:	           CSX29 =0;	         break;
 	     case 29 :	         CSX30 =0;	         break;
 	     case 30 :	         CSX31 =0;	         break;
 	     case 31 :	         CSX32 =0;	         break;
@@ -361,12 +361,12 @@ void delay_ms(unsigned int nms)
 		Vo[1]=Get_Adc_Average(0,4);
 		//CSX1=1;
 		//ADVIN=(float)voltage_TEST0()*3300/4096;//24894  *3306/4096;//*
-		if(Vo[1] >=1)
+//		if(Vo[1] >=1)
 		{
 			sprintf(Table_2, "\r\nY[%3d]X[%3d]:%5d\r\n", TestYPin,TestXPin,Vo[1]);
 			printf(Table_2);//Up
 		}
-		else printf(".");//Up
+//		else printf(".");//Up
 		
 	    //是否open   with next line.
 		
@@ -391,23 +391,124 @@ int SetPin(int TestYPin,int TestXPin)
 	 XEightBit =(realTestXPin-1)%8;
 	 XCsBit =(realTestXPin-1)/8;
 	
-	    selectYCs(YCsBit);
+	  selectYCs(YCsBit);
 		selectChannal(YEightBit,'Y');
 		selectXCs(XCsBit);
 		selectChannal(XEightBit,'X');
-		delay_ms(20);
-		Vo[1]=Get_Adc_Average(0,4);
+		delay_ms(10);
+		Vo[1]=Get_Adc_Average(0,6);
+	  
+	  if(Vo[1] >1000)
+		{
+			selectYCs(YCsBit);
+			selectChannal(YEightBit,'Y');
+			selectXCs(XCsBit);
+			selectChannal(XEightBit,'X');
+			delay_ms(20);
+			Vo[1]=Get_Adc_Average(0,6);
+		
+		}
 		//CSX1=1;
 		//ADVIN=(float)voltage_TEST0()*3300/4096;//24894  *3306/4096;//*
 //		if(Vo[1] >=f_putLong)
 //		{
-//			sprintf(Table_2, "Y[%3d]X[%3d]:%5d;", TestYPin,TestXPin,Vo[1]);
+//			sprintf(Table_2, "      --------   Y[%3d]X[%3d]:%5d;", TestYPin,TestXPin,Vo[1]);
 //			printf(Table_2);//Up
 //		}
 		//else printf(".");//Up
 		
 	    //是否open   with next line.
 		selectYCs(800); 
+		return Vo[1];
+
+
+}
+int SetPinPrint(int TestYPin,int TestXPin)
+{
+    //是否导通   number 1
+    int YEightBit,YCsBit,XEightBit,XCsBit;
+	int realTestXPin =TestXPin;
+
+
+	 
+	 YEightBit =(TestYPin-1)%8;
+	 YCsBit =(TestYPin-1)/8;
+	 XEightBit =(realTestXPin-1)%8;
+	 XCsBit =(realTestXPin-1)/8;
+	
+	  selectYCs(YCsBit);
+		selectChannal(YEightBit,'Y');
+		selectXCs(XCsBit);
+		selectChannal(XEightBit,'X');
+		delay_ms(20);
+		Vo[1]=Get_Adc_Average(0,6);
+	  
+	  if(Vo[1] >1000)
+		{
+			selectYCs(YCsBit);
+			selectChannal(YEightBit,'Y');
+			selectXCs(XCsBit);
+			selectChannal(XEightBit,'X');
+			delay_ms(20);
+			Vo[1]=Get_Adc_Average(0,6);
+		
+		}
+		//CSX1=1;
+		//ADVIN=(float)voltage_TEST0()*3300/4096;//24894  *3306/4096;//*
+//		if(Vo[1] >=f_putLong)
+//		{
+			sprintf(Table_2, "      --------   Y[%3d]X[%3d]:%5d;", TestYPin,TestXPin,Vo[1]);
+			printf(Table_2);//Up
+//		}
+		//else printf(".");//Up
+		
+	    //是否open   with next line.
+		selectYCs(800); 
+		return Vo[1];
+
+
+}
+int SetPinDontClose(int TestYPin,int TestXPin)
+{
+    //是否导通   number 1
+    int YEightBit,YCsBit,XEightBit,XCsBit;
+	int realTestXPin =TestXPin;
+
+
+	 
+	 YEightBit =(TestYPin-1)%8;
+	 YCsBit =(TestYPin-1)/8;
+	 XEightBit =(realTestXPin-1)%8;
+	 XCsBit =(realTestXPin-1)/8;
+	
+	  selectYCs(YCsBit);
+		selectChannal(YEightBit,'Y');
+		selectXCs(XCsBit);
+		selectChannal(XEightBit,'X');
+		delay_ms(100);
+		Vo[1]=Get_Adc_Average(0,6);
+	  
+	  if(Vo[1] >1000)
+		{
+			selectYCs(YCsBit);
+			selectChannal(YEightBit,'Y');
+			selectXCs(XCsBit);
+			selectChannal(XEightBit,'X');
+			delay_ms(20);
+			Vo[1]=Get_Adc_Average(0,6);
+		
+		}
+		//CSX1=1;
+		//ADVIN=(float)voltage_TEST0()*3300/4096;//24894  *3306/4096;//*
+//		if(Vo[1] >=f_putLong)
+//		{
+//			sprintf(Table_2, "      --------   Y[%3d]X[%3d]:%5d;", TestYPin,TestXPin,Vo[1]);
+//			printf(Table_2);//Up
+//		}
+		//else printf(".");//Up
+		
+	    //是否open   with next line.
+		//selectYCs(800); 
 		return Vo[1];
 
 
@@ -578,7 +679,7 @@ void scanSignalLineByPoint(int *Ypoint)
    //int numTestXFrom =1,numTestXTo =50;
   
 //   int *Ypoint =J7Y_data;
-//   int *Xpoint =J1X_data;
+//   int *Xpoint =J1X_data
 	
    for(i= fromPoint ; i<= toPoint ; i++)
    	{  
@@ -666,8 +767,8 @@ void test4051reverse(int i)
 }
 void test4051_closeY(int i,int w)
 {
-  if(w ==1) SetPinDelay(i,i-1);
-	if(w ==0)	SetPinDelay(i,i);
+  SetPinDelay(i,w);
+//	if(w ==0)	SetPinDelay(i,i);
 
 }
 void run(void)

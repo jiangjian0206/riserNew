@@ -53,7 +53,8 @@ extern  int SetPinReverse(int TestYPin,int TestXPin);
  extern  void selectYCs(int channal);
  extern  void selectXCs(int channal);
  extern  int SetPinDelay(int TestYPin,int TestXPin);
- 
+ extern  int SetPinDontClose(int TestYPin,int TestXPin);
+ extern  int SetPinPrint(int TestYPin,int TestXPin);
  extern int J7Y_signalTestpoint[] ;
  extern int J7A_gnd[]; 
  extern int J1A_gnd[];

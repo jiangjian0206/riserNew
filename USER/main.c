@@ -53,7 +53,7 @@ int test_setPin =1;
 void usart(void)
 {
 	    
-	   int h;	
+	   
 	  
 	    //char buff[5] ={'R','S','T','\0'};
 		if(USART_RX_STA&0x8000)
@@ -102,7 +102,7 @@ void usart(void)
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'e')
 				{
 
-					Key4.KeyShortDown_F =1;
+					//Key4.KeyShortDown_F =1;
 				} 
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'f')
 				{
@@ -114,40 +114,41 @@ void usart(void)
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'g')
 				{
                   test_setPin ++;
-                  test4051(test_setPin);
-				 
+                  test4051_closeY(test_setPin,test_setPin);
+//									test4051_closeY
 					
 				} 
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'h')
 				{
                   test_setPin --;
-                  test4051(test_setPin);
+                  test4051_closeY(test_setPin,test_setPin);
 				  
 					
 				} 
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'i')
 				{
-                  test4051_closeY(test_setPin,h);
+                  test4051_closeY(128,++test_setPin);
 				} 
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'j')
 				{
-                  test4051_closeY(test_setPin,h);
+                  test4051_closeY(test_setPin,test_setPin);
 					
 				} 
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'k')
 				{
-                   GPIO_ResetBits(GPIOB,GPIO_Pin_5);
-				   printf("set gpiob5 to 0");
+                   test_setPin = test_setPin -20;
+										printf("dec 20 work");
 					
 				}
-				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'c'&& USART_RX_BUF[2] == 'a')
+				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'a')
 				{
-                  scanEveryPointBySelect(1,50);
+                  test4051_closeY(test_setPin,test_setPin+100);
 					
 				}
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'c'&& USART_RX_BUF[2] == 'b')
 				{
-                  scanEveryPointBySelect(51,100);
+								  printf("runcap");
+                 runCap();
 					
 				}
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'c'&& USART_RX_BUF[2] == 'c')
@@ -198,11 +199,11 @@ void usart(void)
 				if(USART_RX_BUF[0] == 'j' && USART_RX_BUF[1] == '7'&& USART_RX_BUF[2] == 'b' )
 				{
 					printf("testj7b\r\n");
-					TESTPEER("J7A","J1A",J7Adata,J7AGND);
-				    TESTPEER("J7B","J1B",J7Bdata,J7BGND);   
+					TESTPEER("J7A","J1A",J7Adata,J7AGND,"U1B");
+				   TESTPEER("J7B","J1B",J7Bdata,J7BGND,"J7B");   
 					
-					TESTPEER("J6A","U1A",J6Adata,J6AGND);
-					TESTPEER("J6B","U1B",J6Bdata,J6BGND);
+					TESTPEER("J6A","U1A",J6Adata,J6AGND,"J1A");
+					TESTPEER("J6B","U1B",J6Bdata,J6BGND,"J1A");
 				} 	
 				if(USART_RX_BUF[0] == 'r' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 't' && USART_RX_BUF[3] == 'u'&& USART_RX_BUF[4] == 'n')
 				{
