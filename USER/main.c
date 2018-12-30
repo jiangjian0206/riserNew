@@ -33,6 +33,11 @@
 #include "ADC.h"
 #include "Select4051.h"
 #include "Alldata.h"
+#include "stdlib.h"
+
+int  g_testY=0,g_testX=0;
+char a='3';
+char *P=&a;
 //#include <Timer2.h>
 
 void RCC_Configuration(void);		//设置系统时钟为72MHZ(这个可以根据需要改)
@@ -67,7 +72,7 @@ void usart(void)
 //				
 //			}
 //			printf("\r\n send:  ");
-//			 USART_RX_BUF[reciveNum] ='\r';
+			  USART_RX_BUF[reciveNum] ='p';
 //			 USART_RX_BUF[reciveNum+1] ='\n';
 //			USART_RX_BUF[reciveNum+2] ='\0';
 //			for(t=0;t< reciveNum+4;t++)
@@ -91,8 +96,8 @@ void usart(void)
 				}
 				if(USART_RX_BUF[0] == 't' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 's' && USART_RX_BUF[3] == 't' && USART_RX_BUF[4] == '\r'&& USART_RX_BUF[5] == '\n')
 				{
-				    Key5.KeyShortDown_F =1;
-					printf("jj");
+				   runTest();
+					 
 				}
 				if(USART_RX_BUF[0] == 'A' && USART_RX_BUF[1] == 'N'&& USART_RX_BUF[2] == 'I' )
 				{
@@ -148,7 +153,7 @@ void usart(void)
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'c'&& USART_RX_BUF[2] == 'b')
 				{
 								  printf("runcap");
-                 runCap();
+                  runCap();
 					
 				}
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'c'&& USART_RX_BUF[2] == 'c')
@@ -211,11 +216,26 @@ void usart(void)
 					returnOR =0; 
 					printf("set returnor =0\r\n");
 				} 	
-				if(USART_RX_BUF[0] == 'j' && USART_RX_BUF[1] == '6'&& USART_RX_BUF[2] == 'a' )
+				if(USART_RX_BUF[0] == 'y' && USART_RX_BUF[1] == 'y'&& USART_RX_BUF[2] == 'y' )
 				{
-					printf("testj6a\r\n");
-				    testj6A_U1A();   
+				  //printf(USART_RX_BUF);
+					P=USART_RX_BUF;
+					P =P+3;
+					g_testY=(int)atof(P);	
+					sprintf(Table_2, "setY[%3d]\r\n",g_testY);printf(Table_2);
 				} 
+				if(USART_RX_BUF[0] == 'x' && USART_RX_BUF[1] == 'x'&& USART_RX_BUF[2] == 'x' )
+				{
+				  //printf(USART_RX_BUF);
+					P=USART_RX_BUF;
+					P =P+3;
+					g_testX=(int)atof(P);	
+					sprintf(Table_2, "setX[%3d]\r\n",g_testX);printf(Table_2);
+				}
+				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'y')
+				{
+                  test4051_closeY(g_testY,g_testX);
+				}
 				//printf("\r\n");//插入换行
 			}
 			

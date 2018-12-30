@@ -11,7 +11,8 @@
  extern  int J6Bdata[][4];
  extern  int J6BGND[][4];
  extern  int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3);
- extern void runCap(void);
+ extern  int runCap(void);
+ extern  int runTest(void);
  
 #endif
 

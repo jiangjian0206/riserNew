@@ -40,3 +40,4 @@
 .\main.o: USER\ADC.h
 .\main.o: USER\Select4051.h
 .\main.o: USER\Alldata.h
+.\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

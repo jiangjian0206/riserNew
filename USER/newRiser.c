@@ -362,10 +362,10 @@ void delay_ms(unsigned int nms)
 		//CSX1=1;
 		//ADVIN=(float)voltage_TEST0()*3300/4096;//24894  *3306/4096;//*
 //		if(Vo[1] >=1)
-		{
-			sprintf(Table_2, "\r\nY[%3d]X[%3d]:%5d\r\n", TestYPin,TestXPin,Vo[1]);
-			printf(Table_2);//Up
-		}
+//		{
+//			sprintf(Table_2, "\r\nY[%3d]X[%3d]:%5d\r\n", TestYPin,TestXPin,Vo[1]);
+//			printf(Table_2);//Up
+//		}
 //		else printf(".");//Up
 		
 	    //ÊÇ·ñopen   with next line.
@@ -398,12 +398,9 @@ int SetPin(int TestYPin,int TestXPin)
 		delay_ms(10);
 		Vo[1]=Get_Adc_Average(0,6);
 	  
-	  if(Vo[1] >1000)
+	  if(Vo[1] >300 && Vo[1] <1000)
 		{
-			selectYCs(YCsBit);
-			selectChannal(YEightBit,'Y');
-			selectXCs(XCsBit);
-			selectChannal(XEightBit,'X');
+			
 			delay_ms(20);
 			Vo[1]=Get_Adc_Average(0,6);
 		
@@ -440,25 +437,21 @@ int SetPinPrint(int TestYPin,int TestXPin)
 		selectChannal(YEightBit,'Y');
 		selectXCs(XCsBit);
 		selectChannal(XEightBit,'X');
-		delay_ms(20);
+		delay_ms(10);
 		Vo[1]=Get_Adc_Average(0,6);
 	  
-	  if(Vo[1] >1000)
+	  if(Vo[1] >300 && Vo[1] <1000)
 		{
-			selectYCs(YCsBit);
-			selectChannal(YEightBit,'Y');
-			selectXCs(XCsBit);
-			selectChannal(XEightBit,'X');
 			delay_ms(20);
 			Vo[1]=Get_Adc_Average(0,6);
-		
+		  
 		}
 		//CSX1=1;
 		//ADVIN=(float)voltage_TEST0()*3300/4096;//24894  *3306/4096;//*
 //		if(Vo[1] >=f_putLong)
 //		{
-			sprintf(Table_2, "      --------   Y[%3d]X[%3d]:%5d;", TestYPin,TestXPin,Vo[1]);
-			printf(Table_2);//Up
+//			sprintf(Table_2, "      --------   Y[%3d]X[%3d]:%5d;", TestYPin,TestXPin,Vo[1]);
+//			printf(Table_2);//Up
 //		}
 		//else printf(".");//Up
 		
@@ -485,16 +478,13 @@ int SetPinDontClose(int TestYPin,int TestXPin)
 		selectChannal(YEightBit,'Y');
 		selectXCs(XCsBit);
 		selectChannal(XEightBit,'X');
-		delay_ms(100);
+		delay_ms(60);
 		Vo[1]=Get_Adc_Average(0,6);
 	  
-	  if(Vo[1] >1000)
+	  if(Vo[1] >300 && Vo[1] <1000)
 		{
-			selectYCs(YCsBit);
-			selectChannal(YEightBit,'Y');
-			selectXCs(XCsBit);
-			selectChannal(XEightBit,'X');
-			delay_ms(20);
+			
+			delay_ms(50);
 			Vo[1]=Get_Adc_Average(0,6);
 		
 		}

@@ -14,6 +14,11 @@
 #include "Select4051.h"
 #include "Alldata.h"
 
+#define go_back if(whether_return ==1) return 0;
+
+int whether_return =1;
+int limitResult =1100;
+
 int V12data[][2]={
 	48,148,
 	47,147,
@@ -60,35 +65,35 @@ int  G_gnd[][2] ={
 37,37,14,14,
 39,39,12,12,
 40,40,11,11,
-42,42,9,9,
+//42,42,9,9,  //''
 43,43,8,8,
 45,45,6,6,
 46,46,5,5,
-48,48,3,3,
+//48,48,3,3,
 49,49,2,2,
 51,51,100,100,
-52,52,99,99,
-54,54,97,97,
+//52,52,99,99,
+//54,54,97,97,
 55,55,96,96,
 57,57,94,94,
 59,59,92,92,
-60,60,91,91,
-62,62,89,89,
-63,63,88,88,
+//60,60,91,91,
+//62,62,89,89,
+//63,63,88,88,
 65,65,86,86,
-66,66,85,85,
-68,68,83,83,
-69,69,82,82,
-71,71,80,80,
-72,72,79,79,
+//66,66,85,85,
+//68,68,83,83,
+//69,69,82,82,  //''
+//71,71,80,80,//''
+//72,72,79,79,  //''
 74,74,77,77,
 75,75,76,76,
 77,77,74,74,
 78,78,73,73,
 80,80,71,71,
 81,81,70,70,
-84,84,67,67,
-86,86,65,65,
+//84,84,67,67,  //''
+//86,86,65,65,  //''
 88,88,63,63,
 89,89,62,62,
 91,91,60,60,
@@ -99,14 +104,14 @@ int  G_gnd[][2] ={
 98,98,53,53,
 
 500,500,500,500, 
-2,2,49,49,
-3,3,48,48,
+//2,2,49,49,
+//3,3,48,48,  //''
 4,4,47,47,
 5,5,46,46,
 6,6,45,45,
 7,7,44,44,
 2,8,49,43,
-3,9,48,42,
+//3,9,48,42,
 4,10,47,41,
 5,11,46,40,
 6,12,45,39,
@@ -131,7 +136,7 @@ int  G_gnd[][2] ={
 11,18,40,33,
 12,19,39,32,
 20,20,31,31,
-21,21,30,30,
+//21,21,30,30,  //''
 22,22,29,29,
 24,23,27,28,
 27,24,24,27,
@@ -145,12 +150,12 @@ int  G_gnd[][2] ={
 50,47,1,4,
 53,50,98,1,
 56,53,95,98,
-58,56,93,95,
-61,58,90,93,
+//58,56,93,95,
+//61,58,90,93,
 64,61,87,90,
-67,64,84,87,
+//67,64,84,87,
 70,67,81,84,
-73,70,78,81,
+//73,70,78,81,
 76,73,75,78,
 79,76,72,75,
 82,79,69,72,
@@ -170,8 +175,8 @@ int  G_gnd[][2] ={
 
 //Yslot,	Xgoal,	RelyY,	RelyX
 	0,0,100,100,
-23,-64,28,164,
-26,26,25,25,
+//23,-64,28,164,   //''
+//26,26,25,25,
 27,27,24,24,
 31,31,20,20,
 32,32,19,19,
@@ -191,14 +196,14 @@ int  G_gnd[][2] ={
 53,53,98,98,
 55,55,96,96,
 57,57,94,94,
-58,58,93,93,
+//58,58,93,93,
 60,60,91,91,
 61,61,90,90,
 63,63,88,88,
-64,64,87,87,
+//64,64,87,87,
 66,66,85,85,
 67,67,84,84,
-69,69,82,82,
+//69,69,82,82,  //''
 70,70,81,81,
 72,72,79,79,
 73,73,78,78,
@@ -207,31 +212,31 @@ int  G_gnd[][2] ={
 78,78,73,73,
 79,79,72,72,
 84,84,67,67,
-86,86,65,65,
+//86,86,65,65,
 88,88,63,63,
 89,89,62,62,
 91,91,60,60,
-92,92,59,59,
-94,94,57,57,
+//92,92,59,59,
+//94,94,57,57,//short
 95,95,56,56,
 97,97,54,54,
 98,98,53,53,
 
 500,500,500,500,
-1,1,50,50,
-2,2,49,49,
-3,3,48,48,
+//1,1,50,50,  //
+//2,2,49,49,
+//3,3,48,48,
 4,4,47,47,
 5,5,46,46,
 6,6,45,45,
-1,7,50,44,
+//1,7,50,44, //
 2,8,49,43,
-3,9,48,42,
+//3,9,48,42,
 4,10,47,41,
 5,11,46,40,
 6,12,45,39,
-1,13,50,38,
-2,14,49,37,
+//1,13,50,38,  //
+//2,14,49,37,
 
 
  501,501,501,501,
@@ -244,7 +249,7 @@ int  G_gnd[][2] ={
 16,79,35,79,
 19,1,32,50,
 20,2,31,49,
-21,3,30,48,
+//21,3,30,48  //''
 502,502,502,502,
 };
 int J7BGND[][4]={
@@ -304,12 +309,12 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 		 int index_600 =0;
 		
 	    //2.test gnd line.whether short.
-	    gnd_test_times =3;
+	  gnd_test_times =6;
 		for(i=1;testGnd[i][0] !=500;i++)
 		{
 			result = SetPin(testGnd[i][2] +setmove,testGnd[i][3] +setmove);
 			
-			if(result >1100)
+			if(result >limitResult)
 			{
 				store_gnd_right =i;
 				sprintf(Table_2, "pass:%s[%3d]%s[%3d]:ok\r\n", str1,testGnd[i][0],str2,testGnd[i][1]);
@@ -318,12 +323,12 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 			}
 			else
 			{
-				gnd_test_times -- ;
+				gnd_test_times-- ;
 				if(gnd_test_times ==0)
 				{
 				  sprintf(Table_2, "fail:%s[%3d]%s[%3d]:open\r\n", str1,testGnd[i][0],str2,testGnd[i][1]);
 				  printf(Table_2);
-//				  return 0;
+					go_back;
 				}
 				
 			}
@@ -335,7 +340,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 		{
 			result = SetPinPrint(testData[i][2] +setmove,testData[i][3] +setmove);
 			
-			if(result >1250)
+			if(result >limitResult)
 			{
 				sprintf(Table_2, "pass:%s[%3d]%s[%3d]:ok\r\n", str1,testData[i][0],str2,testData[i][1]);
 				printf(Table_2);
@@ -347,6 +352,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 				{
 					sprintf(Table_2, "fail:%s[%3d]%s[%3d]:open\r\n", str1,testData[i][0],str2,testData[i][1]);
 					printf(Table_2);
+					go_back;
 				}
 				
 			}
@@ -361,7 +367,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 				{
 					result = SetPinPrint(testData[i][2] +setmove,testData[i][3] +testData[index_600][3]);
 					
-					if(result >1250)
+					if(result >limitResult)
 					{
 						sprintf(Table_2, "pass:%s[%3d]%s[%3d]:ok\r\n", str1,testData[i][0],str3,testData[i][1]);
 						printf(Table_2);
@@ -373,6 +379,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 						{
 							sprintf(Table_2, "fail:%s[%3d]%s[%3d]:open\r\n", str1,testData[i][0],str3,testData[i][1]);
 							printf(Table_2);
+							go_back;
 						}
 						
 					}
@@ -384,7 +391,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 		{
 			result = SetPin(testData[i][2] +setmove,testData[i][3] +setmove);
 			
-			if(result >1100)
+			if(result >limitResult)
 			{
 				sprintf(Table_2, "pass:%s[%3d]%s[%3d]:ok\r\n", str1,testData[i][0],str2,testData[i][1]);
 				printf(Table_2);
@@ -393,6 +400,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 			{
 				sprintf(Table_2, "fail:%s[%3d]%s[%3d]:open\r\n", str1,testData[i][0],str2,testData[i][1]);
 				printf(Table_2);
+				go_back;
 			}
 //			
 //			////3.test signal line with the gnd line  .whether open.
@@ -406,6 +414,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 			{
 				sprintf(Table_2, "fail:%s[%3d]%s[%3d]:short\r\n", str1,testData[i][0],str2,testGnd[store_gnd_right][1]);
 				printf(Table_2);
+				go_back;
 			}
 			
 			//4.test signal line with the near line .whether open.
@@ -421,6 +430,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 				{
 					sprintf(Table_2, "fail:%s[%3d]%s[%3d]:short\r\n", str1,testData[i][0],str2,testData[i+1][1]);
 					printf(Table_2);
+					go_back;
 				}
 			
 			}
@@ -428,7 +438,7 @@ int TESTPEER(char *str1,char *str2,int testData[][4],int testGnd[][4],char* str3
 		}		
 		
 		//selectYCs(800); 
-		return result;
+		return 1;
 
 
 }
@@ -448,17 +458,22 @@ int testCapWhetherShort(int checkY[][2],int checkX[][2],char* str1)
 			if(SetPin(checkX[i][0],checkX[i][1] )>1200)
 				usableX =checkX[i][1];
 		}
-		sprintf(Table_2, "will check [%3d][%3d]\r\n",usableY,usableX );printf(Table_2);
-		if(usableY ==0 || usableX ==0) return 0;
+//		sprintf(Table_2, "will check [%3d][%3d]\r\n",usableY,usableX );printf(Table_2);
+		if(usableY ==0 || usableX ==0) 
+		{
+			sprintf(Table_2, "fail:J7A[  7]J1A[ 12]:open\r\n");
+			printf(Table_2);
+			return 0;
+		}
    					
 		for(i=0;i<16;i++)
 		{
 			result[i] = SetPinDontClose(usableY,usableX);	
-			sprintf(Table_2, "will check [%3d][%3d][%3d]\r\n",usableY,usableX,result[i] );printf(Table_2);
+//			sprintf(Table_2, "will check [%3d][%3d][%3d]\r\n",usableY,usableX,result[i] );printf(Table_2);
 			if(result[0] <1000) {status =1;break;}  //break for ,and ok;
 			if(i>0)
 			{
-				if(result[i-1] >= result[i]+20 || result[i] <250)
+				if(result[i-1] >= result[i]+10 || result[i] <250)
 				{
 					if(i ==14) {status =1;break;} 
 				}
@@ -485,7 +500,7 @@ int testCapWhetherShort(int checkY[][2],int checkX[][2],char* str1)
 		else if( status ==2)//fail
 		{
 			 if(!strcmp(str1,"V12")){
-				 sprintf(Table_2, "fail:J7A[  4]J7B[5]:short\r\n");
+				 sprintf(Table_2, "fail:J7A[  4]J7B[  5]:short\r\n");
 			 }
 			  if(!strcmp(str1,"V3")){
 				 sprintf(Table_2, "fail:J7B[ 17]U1A[ 77]:short\r\n");
@@ -500,21 +515,42 @@ int testCapWhetherShort(int checkY[][2],int checkX[][2],char* str1)
 		return 0;
 }
 
-void runTest(void)
+int runMiddle(void)
 {
-	TESTPEER("J7A","J1A",J7Adata,J7AGND,"NO");
-	TESTPEER("J7B","J1B",J7Bdata,J7BGND,"NO");   
-					
-	TESTPEER("J6A","U1A",J6Adata,J6AGND,"J7A");
-	TESTPEER("J6B","U1B",J6Bdata,J6BGND,"NO");
+	int result =0;
+	result  = runCap();
+	if(result ==0) return 0;
+	result =TESTPEER("J7A","J1A",J7Adata,J7AGND,"U1B");
+	if(result ==0) return 0;
+	result =TESTPEER("J7B","J1B",J7Bdata,J7BGND,"J7B");   
+	if(result ==0) return 0;
+	
+	result =TESTPEER("J6A","U1A",J6Adata,J6AGND,"J1A");
+	if(result ==0) return 0;
+	result =TESTPEER("J6B","U1B",J6Bdata,J6BGND,"J1A");
+	if(result ==0) return 0;
+
+	return 1;
 
 }
-void runCap(void)
+int runTest(void)
 {
-  testCapWhetherShort(V12data,G_gnd,"V12");
-	testCapWhetherShort(V3data,G_gnd,"V3");
-	testCapWhetherShort(V3AUXdata,G_gnd,"V3AUX");
+	int result =-1;
+	result =runMiddle();
+	if(result ==0)printf("allfail\r\n");
+	result =runMiddle();
+	if(result ==1)printf("allpass\r\n");
+}
+int runCap(void)
+{
+	int error =0;
 	
+  error = testCapWhetherShort(V12data,G_gnd,"V12");
+	if(error ==0) return 0;
+	error = testCapWhetherShort(V3data,G_gnd,"V3");
+	if(error ==0) return 0;
+	error = testCapWhetherShort(V3AUXdata,G_gnd,"V3AUX");
+	if(error ==0) return 0;
 	
 }
 
