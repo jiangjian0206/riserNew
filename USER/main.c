@@ -38,6 +38,8 @@
 int  g_testY=0,g_testX=0;
 char a='3';
 char *P=&a;
+int  cylinder =0;
+int  testresult =0;
 //#include <Timer2.h>
 
 void RCC_Configuration(void);		//设置系统时钟为72MHZ(这个可以根据需要改)
@@ -190,10 +192,12 @@ void usart(void)
 					
 				  scanSignalLineByPoint(J7Y_signalTestpoint);
 				}
-				  if(USART_RX_BUF[0] == 'j' && USART_RX_BUF[1] == '7'&& USART_RX_BUF[2] == 'a' )
+				  if(USART_RX_BUF[0] == 'j' && USART_RX_BUF[1] == '6'&& USART_RX_BUF[2] == 'a' )
 				{
-					
-				  testj7a_j1a();
+					whether_return =1;
+				  TESTPEER("J6A","U1A",J6Adata,J6AGND,"J1A");
+					TESTPEER("J6B","U1B",J6Bdata,J6BGND,"J1A");
+					whether_return =0;
 				} 
 				if(USART_RX_BUF[0] == 'd' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'b' && USART_RX_BUF[3] == 'u'&& USART_RX_BUF[4] == 'g')
 				{
@@ -201,20 +205,24 @@ void usart(void)
 				    debugPrintfEachTime =0;
 					printf("set debug 0\r\n");
 				}
-				if(USART_RX_BUF[0] == 'j' && USART_RX_BUF[1] == '7'&& USART_RX_BUF[2] == 'b' )
+				
+				if(USART_RX_BUF[0] == 'c' && USART_RX_BUF[1] == 'a'&& USART_RX_BUF[2] == 't' )
 				{
 					printf("testj7b\r\n");
+					whether_return =1;
 					TESTPEER("J7A","J1A",J7Adata,J7AGND,"U1B");
-				   TESTPEER("J7B","J1B",J7Bdata,J7BGND,"J7B");   
+				  TESTPEER("J7B","J1B",J7Bdata,J7BGND,"J7B");   
 					
 					TESTPEER("J6A","U1A",J6Adata,J6AGND,"J1A");
 					TESTPEER("J6B","U1B",J6Bdata,J6BGND,"J1A");
-				} 	
+				} 
+				
 				if(USART_RX_BUF[0] == 'r' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 't' && USART_RX_BUF[3] == 'u'&& USART_RX_BUF[4] == 'n')
 				{
 					
 					returnOR =0; 
 					printf("set returnor =0\r\n");
+					
 				} 	
 				if(USART_RX_BUF[0] == 'y' && USART_RX_BUF[1] == 'y'&& USART_RX_BUF[2] == 'y' )
 				{
@@ -234,7 +242,18 @@ void usart(void)
 				}
 				if(USART_RX_BUF[0] == 's' && USART_RX_BUF[1] == 'e'&& USART_RX_BUF[2] == 'y')
 				{
-                  test4051_closeY(g_testY,g_testX);
+          testresult = test4051_closeY(g_testY,g_testX);
+					sprintf(Table_2, "setX[%3d]\r\n",testresult);printf(Table_2);
+					
+				}
+				if(USART_RX_BUF[0] == 'u' && USART_RX_BUF[1] == 'u'&& USART_RX_BUF[2] == 't')
+				{
+					  
+						P=USART_RX_BUF;
+						P =P+3;
+						cylinder=(int)atof(P);	
+						sprintf(Table_2, "setX[%3d]\r\n",cylinder);printf(Table_2);     
+					  controlCylinder(cylinder);
 				}
 				//printf("\r\n");//插入换行
 			}

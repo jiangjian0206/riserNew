@@ -1,6 +1,9 @@
 #ifndef ALLDATA_H
 #define ALLDATA_H
 
+extern int whether_return;
+
+
  extern  int J7Bdata[][4];
  extern  int J7BGND[][4];
  extern  int J7Adata[][4];

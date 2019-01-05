@@ -34,4 +34,5 @@
 .\newriser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\newriser.o: USER\usart.h
 .\newriser.o: USER\ADC.h
+.\newriser.o: .\TaskDelay\TaskConfig.h
 .\newriser.o: USER\Select4051.h

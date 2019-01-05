@@ -38,7 +38,7 @@ extern void TestSignalOnly_three(int *point);
 extern void run(void);
 extern void main1(void);
 extern void test4051(int i);
-extern void test4051_closeY(int i,int);
+extern int test4051_closeY(int i,int);
 extern void delay_ms(unsigned int nms);
 extern void scanEveryPointBySelect(int fromPoint,int toPoint);
 extern void scanEveryPointBySelect(int fromPoint,int toPoint);
@@ -60,6 +60,8 @@ extern  int SetPinReverse(int TestYPin,int TestXPin);
  extern int J1A_gnd[];
  extern int testj7B_j1B(void);
  extern int testj6A_U1A(void);
+ 
+ extern int controlCylinder(int index);
  #endif
  
 

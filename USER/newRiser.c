@@ -6,6 +6,7 @@
 //#include "define.h"
 #include "usart.h"
 #include "ADC.h"
+#include "TaskConfig.h"
 
 //#include "Time_test.h"
 #include "stm32f10x_tim.h"
@@ -178,6 +179,7 @@ void delay_ms(unsigned int nms)
 	 CSY43 =1;
 	 CSY44 =1;
 	 CSY45 =1;
+	 CSY46 =1;
 	 
      switch ( channal )
      {
@@ -228,6 +230,7 @@ void delay_ms(unsigned int nms)
 	     case 42 :	         CSY43 =0;	         break;
 	     case 43 :	         CSY44 =0;	         break;
 	     case 44 :	         CSY45 =0;	         break;
+			 case 45 :	         CSY46 =0;	         break;
          default:             
              break;
      }
@@ -395,7 +398,7 @@ int SetPin(int TestYPin,int TestXPin)
 		selectChannal(YEightBit,'Y');
 		selectXCs(XCsBit);
 		selectChannal(XEightBit,'X');
-		delay_ms(10);
+		delay_ms(250);
 		Vo[1]=Get_Adc_Average(0,6);
 	  
 	  if(Vo[1] >300 && Vo[1] <1000)
@@ -437,7 +440,7 @@ int SetPinPrint(int TestYPin,int TestXPin)
 		selectChannal(YEightBit,'Y');
 		selectXCs(XCsBit);
 		selectChannal(XEightBit,'X');
-		delay_ms(10);
+		delay_ms(30);
 		Vo[1]=Get_Adc_Average(0,6);
 	  
 	  if(Vo[1] >300 && Vo[1] <1000)
@@ -478,7 +481,7 @@ int SetPinDontClose(int TestYPin,int TestXPin)
 		selectChannal(YEightBit,'Y');
 		selectXCs(XCsBit);
 		selectChannal(XEightBit,'X');
-		delay_ms(60);
+		delay_ms(1000);
 		Vo[1]=Get_Adc_Average(0,6);
 	  
 	  if(Vo[1] >300 && Vo[1] <1000)
@@ -755,9 +758,9 @@ void test4051reverse(int i)
   SetPinReverse(i,i);
 
 }
-void test4051_closeY(int i,int w)
+int test4051_closeY(int i,int w)
 {
-  SetPinDelay(i,w);
+ return SetPinDelay(i,w);
 //	if(w ==0)	SetPinDelay(i,i);
 
 }
@@ -849,6 +852,43 @@ void main1(void)
 
 //}
 
-
+int controlCylinder(int index)
+{
+  if(index ==11)
+  {
+	  y1Underaught_up;
+	  y2Underaught_down_over;
+  }
+  if(index ==12)
+  {
+	  y1Underaught_up_over;
+	  y2Underaught_down;
+  }
+   if(index ==21)
+  {
+	 y3Left_up;
+  }
+  if(index ==22)
+  {
+	 y3Left_down;	
+  }
+  //
+    if(index ==31)
+  {
+	 y4Left_up;
+  }
+  if(index ==32)
+  {
+	 y4Left_down;	
+  }
+//
+  if(index ==41)
+  {
+	 y5Right_up;
+  }
+  if(index ==42)
+  {
+	 y5Right_down;	
+  }}
 
 

@@ -59,7 +59,7 @@ I (.\LIB\inc\stm32f10x_usart.h)(0x5C22DE1B)
 I (.\LIB\inc\stm32f10x_wwdg.h)(0x5C22DE1B)
 I (.\LIB\inc\misc.h)(0x5C22DE1B)
 I (.\TaskDelay\TaskConfig.h)(0x5C22DE1B)
-F (.\USER\main.c)(0x5C273E27)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\USER\main.c)(0x5C306875)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (.\CMSIS\stm32f10x.h)(0x5C22DE1B)
 I (.\CMSIS\core_cm3.h)(0x5C22DE1B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
@@ -98,8 +98,8 @@ I (.\USER\led.h)(0x5C22DE1B)
 I (USER\usart.h)(0x5C22DE1B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB2B76)
 I (USER\ADC.h)(0x5C22DE1B)
-I (USER\Select4051.h)(0x5C247F62)
-I (USER\Alldata.h)(0x5C260CC1)
+I (USER\Select4051.h)(0x5C2D753B)
+I (USER\Alldata.h)(0x5C288769)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB2B78)
 F (.\USER\usart.c)(0x5C22DE1B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\usart.o --omf_browse .\usart.crf --depend .\usart.d)
 I (.\CMSIS\stm32f10x.h)(0x5C22DE1B)
@@ -132,7 +132,7 @@ I (.\LIB\inc\stm32f10x_wwdg.h)(0x5C22DE1B)
 I (.\LIB\inc\misc.h)(0x5C22DE1B)
 I (USER\usart.h)(0x5C22DE1B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB2B76)
-F (.\USER\newRiser.c)(0x5C285A16)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\newriser.o --omf_browse .\newriser.crf --depend .\newriser.d)
+F (.\USER\newRiser.c)(0x5C2DD949)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\newriser.o --omf_browse .\newriser.crf --depend .\newriser.d)
 I (USER\led.h)(0x5C22DE1B)
 I (.\CMSIS\stm32f10x.h)(0x5C22DE1B)
 I (.\CMSIS\core_cm3.h)(0x5C22DE1B)
@@ -163,11 +163,12 @@ I (.\LIB\inc\stm32f10x_usart.h)(0x5C22DE1B)
 I (.\LIB\inc\stm32f10x_wwdg.h)(0x5C22DE1B)
 I (.\LIB\inc\misc.h)(0x5C22DE1B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB2B76)
-I (USER\define.h)(0x5C22DE1B)
+I (USER\define.h)(0x5C28876A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB2B78)
 I (USER\usart.h)(0x5C22DE1B)
 I (USER\ADC.h)(0x5C22DE1B)
-I (USER\Select4051.h)(0x5C247F62)
+I (.\TaskDelay\TaskConfig.h)(0x5C22DE1B)
+I (USER\Select4051.h)(0x5C2D753B)
 F (.\USER\ADC.c)(0x5C22DE1B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\adc.o --omf_browse .\adc.crf --depend .\adc.d)
 I (USER\adc.h)(0x5C22DE1B)
 I (.\CMSIS\stm32f10x.h)(0x5C22DE1B)
@@ -198,7 +199,7 @@ I (.\LIB\inc\stm32f10x_tim.h)(0x5C22DE1B)
 I (.\LIB\inc\stm32f10x_usart.h)(0x5C22DE1B)
 I (.\LIB\inc\stm32f10x_wwdg.h)(0x5C22DE1B)
 I (.\LIB\inc\misc.h)(0x5C22DE1B)
-F (.\dataJ6.c)(0x5C2733DA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\dataj6.o --omf_browse .\dataj6.crf --depend .\dataj6.d)
+F (.\dataJ6.c)(0x5C2DD0EA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\dataj6.o --omf_browse .\dataj6.crf --depend .\dataj6.d)
 I (.\USER\led.h)(0x5C22DE1B)
 I (.\CMSIS\stm32f10x.h)(0x5C22DE1B)
 I (.\CMSIS\core_cm3.h)(0x5C22DE1B)
@@ -229,12 +230,12 @@ I (.\LIB\inc\stm32f10x_usart.h)(0x5C22DE1B)
 I (.\LIB\inc\stm32f10x_wwdg.h)(0x5C22DE1B)
 I (.\LIB\inc\misc.h)(0x5C22DE1B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB2B76)
-I (.\USER\define.h)(0x5C22DE1B)
+I (.\USER\define.h)(0x5C28876A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB2B78)
 I (.\USER\usart.h)(0x5C22DE1B)
 I (.\USER\ADC.h)(0x5C22DE1B)
-I (.\USER\Select4051.h)(0x5C247F62)
-F (.\dataJ7.c)(0x5C2856D4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\dataj7.o --omf_browse .\dataj7.crf --depend .\dataj7.d)
+I (.\USER\Select4051.h)(0x5C2D753B)
+F (.\dataJ7.c)(0x5C306819)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\dataj7.o --omf_browse .\dataj7.crf --depend .\dataj7.d)
 I (.\USER\led.h)(0x5C22DE1B)
 I (.\CMSIS\stm32f10x.h)(0x5C22DE1B)
 I (.\CMSIS\core_cm3.h)(0x5C22DE1B)
@@ -265,12 +266,12 @@ I (.\LIB\inc\stm32f10x_usart.h)(0x5C22DE1B)
 I (.\LIB\inc\stm32f10x_wwdg.h)(0x5C22DE1B)
 I (.\LIB\inc\misc.h)(0x5C22DE1B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB2B76)
-I (.\USER\define.h)(0x5C22DE1B)
+I (.\USER\define.h)(0x5C28876A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB2B78)
 I (.\USER\usart.h)(0x5C22DE1B)
 I (.\USER\ADC.h)(0x5C22DE1B)
-I (.\USER\Select4051.h)(0x5C247F62)
-I (.\USER\Alldata.h)(0x5C260CC1)
+I (.\USER\Select4051.h)(0x5C2D753B)
+I (.\USER\Alldata.h)(0x5C288769)
 F (.\newRiser2.c)(0x5C22DE1B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\newriser2.o --omf_browse .\newriser2.crf --depend .\newriser2.d)
 I (.\USER\led.h)(0x5C22DE1B)
 I (.\CMSIS\stm32f10x.h)(0x5C22DE1B)
@@ -302,11 +303,11 @@ I (.\LIB\inc\stm32f10x_usart.h)(0x5C22DE1B)
 I (.\LIB\inc\stm32f10x_wwdg.h)(0x5C22DE1B)
 I (.\LIB\inc\misc.h)(0x5C22DE1B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB2B76)
-I (.\USER\define.h)(0x5C22DE1B)
+I (.\USER\define.h)(0x5C28876A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB2B78)
 I (.\USER\usart.h)(0x5C22DE1B)
 I (.\USER\ADC.h)(0x5C22DE1B)
-I (.\USER\Select4051.h)(0x5C247F62)
+I (.\USER\Select4051.h)(0x5C2D753B)
 F (.\LIB\src\misc.c)(0x5C22DE1B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\misc.o --omf_browse .\misc.crf --depend .\misc.d)
 I (.\LIB\inc\misc.h)(0x5C22DE1B)
 I (.\CMSIS\stm32f10x.h)(0x5C22DE1B)
@@ -922,7 +923,7 @@ I (.\LIB\inc\misc.h)(0x5C22DE1B)
 F (.\CMSIS\startup\arm\startup_stm32f10x_hd.s)(0x5C22DE1B)(--cpu Cortex-M3 -g --apcs=interwork -I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 517" --pd "STM32F10X_HD SETA 1"--list .\user\listing\startup_stm32f10x_hd.lst --xref -o .\startup_stm32f10x_hd.o --depend .\startup_stm32f10x_hd.d)
 F (.\TaskDelay\Delaypoint.c)(0x5C22DE1B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\delaypoint.o --omf_browse .\delaypoint.crf --depend .\delaypoint.d)
 I (TaskDelay\Delaypoint.h)(0x5C22DE1B)
-F (.\TaskDelay\Taskpoint.c)(0x5C22DE1B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\taskpoint.o --omf_browse .\taskpoint.crf --depend .\taskpoint.d)
+F (.\TaskDelay\Taskpoint.c)(0x5C307077)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\taskpoint.o --omf_browse .\taskpoint.crf --depend .\taskpoint.d)
 I (TaskDelay\Taskpoint.h)(0x5C22DE1B)
 I (TaskDelay\Delaypoint.h)(0x5C22DE1B)
 I (.\LIB\inc\stm32f10x_gpio.h)(0x5C22DE1B)
@@ -957,7 +958,7 @@ I (.\kyeScan\key.h)(0x5C22DE1B)
 I (TaskDelay\TaskConfig.h)(0x5C22DE1B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB2B76)
 I (.\USER\led.h)(0x5C22DE1B)
-I (.\USER\Select4051.h)(0x5C247F62)
+I (.\USER\Select4051.h)(0x5C2D753B)
 F (.\kyeScan\key.c)(0x5C22DE1B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\USER -I.\CMSIS -I.\LIB\inc -I.\kyeScan -I.\TaskDelay -I.\USER-I D:\newRiser\riserNew\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DSTM32F10X_HD-o .\key.o --omf_browse .\key.crf --depend .\key.d)
 I (.\kyeScan\key.h)(0x5C22DE1B)
 I (.\kyeScan\keyConfig.h)(0x5C22DE1B)

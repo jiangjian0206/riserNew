@@ -102,7 +102,7 @@ void Task1(TypeDelayStr *P_DelayStr,DefStrTask *P_StateTask,StrKeyClass *CurKey)
 		case 52:
 			if(x5Sensor_underaught_bottom.KeyShortDown_F ==1)
 			{
-				y2Underaught_down_over;
+				
 				StopAndSwitch(waitCy,2);
 
 			}
@@ -148,6 +148,7 @@ void Task1(TypeDelayStr *P_DelayStr,DefStrTask *P_StateTask,StrKeyClass *CurKey)
 			{
 			   
 				y3Left_down;
+				y2Underaught_down_over;
 				
 				
 				StopAndSwitch(3,7);
@@ -256,7 +257,7 @@ void Task2(TypeDelayStr *P_DelayStr,DefStrTask *P_StateTask,StrKeyClass *CurKey)
 		case 5:
 			//if(Riser1Sensor_Pull.KeyShortDown_F ==1)
 			{
-			   
+			  
 			   y5Right_up;
 			   
 			   StopAndSwitch(waitCy,6);
@@ -272,11 +273,11 @@ void Task2(TypeDelayStr *P_DelayStr,DefStrTask *P_StateTask,StrKeyClass *CurKey)
 		case 7://
 			//if(LeftSensor_Pull.KeyShortDown_F ==1)
 			{
-			   
-			   
-			   y1Underaught_up;
+			     
+			    y1Underaught_up;
 			   y2Underaught_down_over;
-			   StopAndSwitch(waitCy,8);
+			   
+			   StopAndSwitch(1200,8);
 				
 			}
 			break;	

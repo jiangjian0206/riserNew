@@ -145,3 +145,4 @@
 #define CSY43  BIT_ADDR(GPIOF_ODR_Addr, 13) //输出
 #define CSY44  BIT_ADDR(GPIOF_ODR_Addr, 14) //输出
 #define CSY45  BIT_ADDR(GPIOF_ODR_Addr, 15) //输出
+#define CSY46  BIT_ADDR(GPIOA_ODR_Addr, 7) //输出
